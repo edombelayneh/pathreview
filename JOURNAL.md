@@ -6,7 +6,7 @@
 
 **Issue title:** Prompt injection defense doesn't sanitize newline characters in user-supplied resume text
 
-**Tier:** [ ] Tier 1  [x] Tier 2  [ ] Tier 3
+**Tier:** [ ] Tier 1 [x] Tier 2 [ ] Tier 3
 
 **Problem summary:**
 PathReview's prompt-injection defense in `safety/prompt_defense.py` sanitizes
@@ -23,6 +23,6 @@ backed by unit tests covering the `\n---\n` and `\nSystem:` cases.
 
 **Branch name:** fix/64-prompt-injection-newline-sanitizer
 
-**Setup confirmation:** [ ] App runs locally at localhost:5173
+**Setup confirmation:** [x] App runs locally at localhost:5173
 
-**Cohort ledger:** [ ] Issue added to cohort ledger
+**Cohort ledger:** [x] Issue added to cohort ledger
