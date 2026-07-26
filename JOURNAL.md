@@ -26,3 +26,25 @@ backed by unit tests covering the `\n---\n` and `\nSystem:` cases.
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
 **Cohort ledger:** [x] Issue added to cohort ledger
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** https://github.com/edombelayneh/pathreview/commit/31978e4436f2eca89bd6a4c19bfa81b7e9b8ba58
+
+**Reproduction summary:**
+Ran user-supplied resume strings containing `\nSystem:` and `\n---\n` through
+`PromptDefense.sanitize()` and observed the output was byte-for-byte identical to
+the malicious input — so `is_injection_attempt(sanitize(x))` still returns `True`.
+Captured this as two failing unit tests (`TestNewlineSanitizationRepro` in
+`tests/unit/test_prompt_defense.py`) that assert the expected post-fix behavior.
+
+**PLAN.md link:** https://github.com/edombelayneh/pathreview/blob/fix/64-prompt-injection-newline-sanitizer/PLAN.md
+
+**Walkthrough video (recommended):**
+
+**Blockers or open questions:**
+While reproducing, I found a *second*, pre-existing gap: `is_injection_attempt()`
+misses role labels with a space before the colon (e.g. `"System :"`), so the
+existing `test_whitespace_variations_detected` test already fails independent of
+my change. Open question for Week 9: fix that in the same PR or scope it out.
+
