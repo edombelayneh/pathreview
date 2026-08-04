@@ -106,4 +106,8 @@ introduces **no new** failures; scoped to my two files, ruff/black/mypy are clea
 and the only failing test is the pre-existing `test_whitespace_variations_detected`.
 See the PR's "Notes for Reviewers.")_
 
-**Draft PR feedback received from:** _[pending — draft PR posted in cohort Slack for peer review; update with reviewer name/handle before final submission]_
+**Draft PR feedback received from:** none — posted the draft PR in the cohort
+Slack channel requesting peer review, but received no feedback before the
+submission deadline. Marked the PR "Ready for review" and self-reviewed against
+`docs/CONTRIBUTING.md` (branch naming, Conventional Commits, docstrings, and the
+scoped `ruff`/`black`/`mypy`/test checks documented above).
